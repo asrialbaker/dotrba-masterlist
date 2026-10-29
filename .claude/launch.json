@@ -5,9 +5,8 @@
       "name": "masterlist",
       "runtimeExecutable": "python3",
       "runtimeArgs": [
-        "-m",
-        "http.server",
-        "8777"
+        "-c",
+        "import http.server as s\nH = s.SimpleHTTPRequestHandler\n_end = H.end_headers\ndef end_headers(self):\n    self.send_header('Cache-Control', 'no-store, must-revalidate')\n    _end(self)\nH.end_headers = end_headers\ns.test(HandlerClass=H, port=8777, bind='127.0.0.1')\n"
       ],
       "port": 8777
     }
