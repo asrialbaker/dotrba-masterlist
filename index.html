@@ -230,7 +230,7 @@ main { padding-bottom: 80px; }
 /* The photo box has a fixed shape; the image is pinned inside its inner area and
    scaled with object-fit: contain, so the whole photo always shows and nothing is clipped. */
 .well {
-  --pad: 5px;
+  --pad: 2px;
   position: relative;
   background: var(--well);
   border-radius: 10px;
@@ -295,7 +295,7 @@ main { padding-bottom: 80px; }
 }
 @media (max-width: 639px) {
   .card { padding: 6px; border-radius: 14px; }
-  .well { --pad: 4px; border-radius: 9px; }
+  .well { --pad: 2px; border-radius: 9px; }
     .body { padding: 12px 4px 6px; }
   .name { font-size: 1.36rem; font-variation-settings: "wdth" 96; margin-bottom: 10px; }
   .fields { gap: 10px; }
@@ -433,17 +433,17 @@ a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid 
   position: static;
   width: auto; height: auto;
   max-width: 100%; max-height: 100%;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0 0 0 1px var(--plate-edge), 0 8px 22px rgba(0, 0, 0, .34);
 }
 
 .thumb {
   background: var(--plate);
   display: flex; align-items: center; justify-content: center;
-  border: 0; border-radius: 12px; padding: 3px;
+  border: 0; border-radius: 12px; padding: 1px;
   box-shadow: inset 0 0 0 1px transparent;
 }
-.thumb img { width: auto; height: auto; max-width: 100%; max-height: 100%; border-radius: 6px; }
+.thumb img { width: auto; height: auto; max-width: 100%; max-height: 100%; border-radius: 11px; }
 .thumb:hover, .thumb.is-active { box-shadow: inset 0 0 0 2px #c08f2e; }
 /* Waiting slots: flat and quiet. Dashes and hatching read as unfinished. */
 .thumb-empty {
@@ -481,9 +481,10 @@ a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid 
 @media (max-width: 639px) {
   .card { padding: 8px; border-radius: 16px; }
   .well { border-radius: 14px; }
-  .well img { border-radius: 9px; }
+  .well img { border-radius: 12px; }
   .thumb, .thumb-empty { border-radius: 9px; }
-  .thumb { padding: 2px; }
+  .thumb { padding: 1px; }
+  .thumb img { border-radius: 8px; }
   .name { font-size: 1.3rem; font-variation-settings: "wdth" 100; margin-bottom: 12px; }
   .fields dt { font-size: .66rem; }
   .modder { font-size: 1rem; }
