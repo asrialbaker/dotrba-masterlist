@@ -431,8 +431,9 @@ a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid 
 }
 .well img {
   position: static;
-  width: auto; height: auto;
+  width: 100%; height: 100%;
   max-width: 100%; max-height: 100%;
+  object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 0 0 1px var(--plate-edge), 0 8px 22px rgba(0, 0, 0, .34);
 }
@@ -443,7 +444,7 @@ a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid 
   border: 0; border-radius: 12px; padding: 1px;
   box-shadow: inset 0 0 0 1px transparent;
 }
-.thumb img { width: auto; height: auto; max-width: 100%; max-height: 100%; border-radius: 11px; }
+.thumb img { width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 11px; }
 .thumb:hover, .thumb.is-active { box-shadow: inset 0 0 0 2px #c08f2e; }
 /* Waiting slots: flat and quiet. Dashes and hatching read as unfinished. */
 .thumb-empty {
