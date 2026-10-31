@@ -1,0 +1,982 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>dotAIO by dotmod · DOTRBA Masterlist</title>
+<meta name="description" content="Every dotAIO by dotmod, 2019 to 2026: launch dates, versions, limited editions and colours. Compiled by Asri Al-Baker.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #e4e8ea;
+  --surface: #f6f7f8;
+  --well: #ffffff;
+  --ink: #1b252e;
+  --ink-2: #4f5b65;
+  --ink-3: #6f7a83;
+  --line: #c6cdd2;
+  --brass: #9a7123;
+  --brass-soft: #c9a560;
+  --focus: #1f5f8b;
+  --plate: #20262b;
+  --plate-edge: rgba(255, 255, 255, .14);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161b1f;
+    --surface: #1f262b;
+    --well: #f1f3f4;
+    --ink: #e6eaed;
+    --ink-2: #a9b3bb;
+    --ink-3: #8a959e;
+    --line: #333c43;
+    --brass: #d6aa55;
+    --brass-soft: #8f7038;
+    --focus: #7fb6dc;
+    --plate: #11161a;
+    --plate-edge: rgba(255, 255, 255, .12);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161b1f; --surface: #1f262b; --well: #f1f3f4; --ink: #e6eaed;
+  --ink-2: #a9b3bb; --ink-3: #8a959e; --line: #333c43; --brass: #d6aa55;
+  --brass-soft: #8f7038; --focus: #7fb6dc;
+  --plate: #11161a; --plate-edge: rgba(255, 255, 255, .12); color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
+@media (min-width: 720px) { .wrap { padding: 0 32px; } }
+
+/* ---------- hero ---------- */
+.hero { padding: 56px 0 28px; }
+.hero h1 {
+  margin: 0;
+  font-weight: 850;
+  font-stretch: 125%;
+  font-variation-settings: "wdth" 125;
+  font-size: clamp(2.1rem, 8.4vw, 6rem);
+  line-height: .92;
+  letter-spacing: -.02em;
+  overflow-wrap: anywhere;
+}
+.hero .by {
+  margin: 16px 0 0;
+  font-size: clamp(1.2rem, 2.6vw, 1.65rem);
+  font-variation-settings: "wdth" 100;
+  color: var(--ink-2);
+}
+.hero .by strong { color: var(--ink); font-weight: 700; }
+.meta {
+  margin: 38px 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 2px solid var(--ink);
+}
+@media (min-width: 900px) { .meta { grid-template-columns: 1.3fr 1.6fr 1.2fr .95fr .95fr; } }
+/* Label on top, value pinned to the bottom so the big counts and the dates share a baseline row. */
+.meta-item {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 6px;
+  padding: 16px 16px 12px 0; border-bottom: 1px solid var(--line);
+}
+@media (min-width: 900px) {
+  .meta-item { border-bottom: 0; padding-right: 24px; }
+  .meta-item + .meta-item { border-left: 1px solid var(--line); padding-left: 22px; }
+}
+.meta dt { font-size: 1rem; line-height: 1.3; color: var(--ink-2); font-variation-settings: "wdth" 92; }
+.meta dd {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  line-height: 1.15;
+  font-weight: 700;
+  font-variation-settings: "wdth" 112;
+  font-variant-numeric: tabular-nums;
+}
+.meta .is-count dd {
+  font-size: clamp(3rem, 6.5vw, 4.6rem);
+  line-height: .95;
+  font-weight: 900;
+  font-variation-settings: "wdth" 118;
+  letter-spacing: -.02em;
+}
+
+/* ---------- toolbar ---------- */
+.bar {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.bar-inner { display: flex; flex-direction: column; gap: 10px; padding-top: 12px; padding-bottom: 12px; }
+@media (min-width: 980px) { .bar-inner { flex-direction: row; align-items: center; gap: 16px; } }
+.search { position: relative; flex: 0 0 auto; }
+@media (min-width: 980px) { .search { width: 300px; } }
+.search svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--ink-3); pointer-events: none; }
+.search input {
+  width: 100%;
+  font: inherit; font-size: .95rem; color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px 10px 38px;
+}
+.search input::placeholder { color: var(--ink-3); }
+.chips {
+  display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none;
+  margin: 0 -16px; padding: 2px 16px;
+}
+.chips::-webkit-scrollbar { display: none; }
+@media (min-width: 980px) { .chips { flex-wrap: wrap; margin: 0; padding: 2px 0; overflow: visible; } }
+.chip {
+  flex: 0 0 auto;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-2);
+  text-decoration: none;
+  font-size: .86rem;
+  font-variation-settings: "wdth" 92;
+  background: transparent;
+  white-space: nowrap;
+}
+.chip:hover { color: var(--ink); border-color: var(--ink-3); }
+.chip.is-active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.chip-n { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--brass); }
+.chip.is-active .chip-n { color: var(--brass-soft); }
+:root[data-theme="dark"] .chip.is-active .chip-n { color: #8f6a24; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chip.is-active .chip-n { color: #8f6a24; } }
+
+/* ---------- sections ---------- */
+main { padding-bottom: 80px; }
+/* Each section opens with a solid title band and is spaced well apart from the next one. */
+.cat { padding-top: 44px; scroll-margin-top: 120px; }
+.cat + .cat { margin-top: 40px; }
+@media (min-width: 980px) { .cat { padding-top: 64px; scroll-margin-top: 88px; } .cat + .cat { margin-top: 56px; } }
+.cat-head {
+  --band: #1b252e; --band-ink: #ffffff; --band-tag: #d9b46a; --band-sub: #b4bec6;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 8px 24px;
+  padding: 22px 26px 22px 28px;
+  margin-bottom: 26px;
+  background: var(--band);
+  color: var(--band-ink);
+  border-radius: 16px;
+  border-left: 8px solid #b88a35;
+}
+:root[data-theme="dark"] .cat-head { --band: #2b353d; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cat-head { --band: #2b353d; } }
+.cat-head h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 3.6vw, 2.4rem);
+  line-height: 1.1;
+  font-weight: 850;
+  font-variation-settings: "wdth" 116;
+  letter-spacing: -.01em;
+  text-wrap: balance;
+}
+.cat-tag { color: var(--band-tag); font-weight: 650; font-variation-settings: "wdth" 104; white-space: nowrap; }
+.cat-count {
+  margin: 0; flex: 0 0 auto;
+  color: var(--band-sub); font-size: 1.05rem; font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+/* Prototypes: an outlined band instead of a filled one, matching their dashed cards. */
+.is-proto .cat-head {
+  --band: transparent; --band-ink: var(--ink); --band-sub: var(--ink-3);
+  border: 2px dashed var(--ink-3); border-left: 8px solid var(--ink-3);
+}
+@media (max-width: 639px) {
+  .cat-head { padding: 16px 16px 16px 18px; border-radius: 12px; border-left-width: 6px; margin-bottom: 18px; }
+  .is-proto .cat-head { border-left-width: 6px; }
+  .cat-count { font-size: .95rem; }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+/* Very narrow phones: one card per row so the big names never break mid-word. */
+@media (max-width: 379px) { .grid { grid-template-columns: minmax(0, 1fr); gap: 14px; } }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; } }
+@media (min-width: 900px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; } }
+
+/* ---------- card ---------- */
+.card {
+  display: flex; flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 8px;
+  min-width: 0;
+}
+.is-proto .card { border-style: dashed; border-width: 1.5px; border-color: var(--ink-3); background: transparent; }
+/* The photo box has a fixed shape; the image is pinned inside its inner area and
+   scaled with object-fit: contain, so the whole photo always shows and nothing is clipped. */
+.well {
+  --pad: 2px;
+  position: relative;
+  background: var(--well);
+  border-radius: 10px;
+  aspect-ratio: 1 / 1;
+}
+.well img {
+  position: absolute;
+  top: var(--pad); left: var(--pad); right: var(--pad); bottom: var(--pad);
+  width: calc(100% - 2 * var(--pad));
+  height: calc(100% - 2 * var(--pad));
+  max-width: none;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+/* Empty photo slot: same box and inner area as a photo, so a photo dropped in later fits the same way. */
+.ph {
+  position: absolute;
+  top: var(--pad); left: var(--pad); right: var(--pad); bottom: var(--pad);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  border: 1.5px dashed #b9c1c7;
+  border-radius: 8px;
+  background: repeating-linear-gradient(135deg, #f5f6f7 0 10px, #eff1f2 10px 20px);
+  color: #7d8891;
+  font-size: .8rem;
+  font-variation-settings: "wdth" 92;
+  text-align: center;
+  padding: 8px;
+}
+.body { padding: 16px 8px 10px; }
+/* RBA name: big, bold, shown in capitals (text in the list itself is unchanged). */
+.name {
+  margin: 0 0 14px;
+  font-size: 2.05rem;
+  line-height: 1.06;
+  font-weight: 900;
+  font-variation-settings: "wdth" 112;
+  text-transform: uppercase;
+  letter-spacing: .005em;
+  overflow-wrap: anywhere;
+}
+.fields { margin: 0; display: grid; gap: 14px; }
+.fields dt { font-size: 1rem; color: var(--ink-3); font-variation-settings: "wdth" 92; margin-bottom: 3px; }
+.fields dd { margin: 0; }
+.modder { font-size: 1.32rem; line-height: 1.32; color: var(--ink); font-weight: 600; overflow-wrap: anywhere; }
+.year {
+  font-size: 1.55rem; line-height: 1.15; font-weight: 800; color: var(--ink);
+  font-variation-settings: "wdth" 110;
+  font-variant-numeric: tabular-nums;
+}
+.year.is-missing { font-size: 1.2rem; font-weight: 400; color: var(--ink-3); font-variation-settings: "wdth" 100; }
+.notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.notes li {
+  position: relative; padding-left: 18px;
+  font-size: 1.24rem; line-height: 1.42; color: var(--ink-2);
+  overflow-wrap: anywhere;
+}
+.notes li::before {
+  content: ""; position: absolute; left: 0; top: .5em;
+  width: 9px; height: 9px; border-radius: 2px;
+  background: var(--brass);
+}
+@media (max-width: 639px) {
+  .card { padding: 6px; border-radius: 14px; }
+  .well { --pad: 2px; border-radius: 9px; }
+    .body { padding: 12px 4px 6px; }
+  .name { font-size: 1.36rem; font-variation-settings: "wdth" 96; margin-bottom: 10px; }
+  .fields { gap: 10px; }
+  .fields dt { font-size: .84rem; }
+  .modder { font-size: 1.06rem; }
+  .year { font-size: 1.25rem; }
+  .year.is-missing { font-size: 1rem; }
+  .notes li { font-size: 1rem; padding-left: 14px; }
+  .notes li::before { width: 6px; height: 6px; border-radius: 1.5px; }
+}
+
+.empty { padding: 64px 0; text-align: center; color: var(--ink-2); }
+.empty button {
+  margin-top: 12px; font: inherit; font-weight: 600; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 9px 16px; cursor: pointer;
+}
+[hidden] { display: none !important; }
+
+a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media print {
+  .bar { display: none; }
+  .card { break-inside: avoid; }
+  body { background: #fff; }
+}
+/* ---------- profile ---------- */
+.profile {
+  list-style: none; margin: 18px 0 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: 10px;
+}
+.profile-link {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 9px 15px 9px 13px;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink-2); text-decoration: none;
+  font-size: .95rem; font-variation-settings: "wdth" 96;
+  transition: border-color .18s ease, color .18s ease, background .18s ease;
+}
+.profile-link svg { flex: 0 0 auto; color: var(--ink-3); transition: color .18s ease; }
+.profile-net { font-weight: 700; color: var(--ink); }
+.profile-handle { color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.profile-link:hover { border-color: var(--brass); background: var(--bg); }
+.profile-link:hover svg, .profile-link:hover .profile-handle { color: var(--brass); }
+
+/* ---------- card gallery ---------- */
+.card { box-shadow: 0 1px 2px rgba(16, 24, 32, .05); transition: border-color .18s ease, box-shadow .18s ease; }
+.card:hover { border-color: var(--ink-3); box-shadow: 0 6px 20px rgba(16, 24, 32, .09); }
+.is-proto .card:hover { box-shadow: none; }
+.well { cursor: zoom-in; overflow: hidden; }
+.well img { transition: opacity .16s ease; }
+.well.is-swapping img { opacity: .35; }
+
+.thumbs {
+  list-style: none; margin: 8px 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;
+}
+@media (max-width: 639px) { .thumbs { gap: 6px; margin-top: 6px; } }
+.thumb {
+  position: relative; display: block; width: 100%; padding: 6px; margin: 0;
+  aspect-ratio: 1 / 1;
+  background: var(--well);
+  border: 1px solid var(--line); border-radius: 9px;
+  cursor: zoom-in; overflow: hidden;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.thumb:hover, .thumb.is-active { border-color: var(--brass); }
+.thumb.is-active { box-shadow: inset 0 0 0 1px var(--brass); }
+.thumb-empty {
+  display: block; width: 100%; aspect-ratio: 1 / 1;
+  border: 1.5px dashed var(--line); border-radius: 9px;
+  background: repeating-linear-gradient(135deg, transparent 0 7px, color-mix(in srgb, var(--line) 30%, transparent) 7px 14px);
+}
+@media (max-width: 639px) { .thumb { padding: 4px; border-radius: 7px; } .thumb-empty { border-radius: 7px; } }
+
+/* ---------- lightbox ---------- */
+.lb {
+  position: fixed; inset: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  background: rgba(12, 17, 21, .88);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.lb[hidden] { display: none !important; }
+.lb-fig { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; max-width: min(1100px, 100%); max-height: 100%; }
+.lb-fig img {
+  width: auto; height: min(calc(100vh - 160px), 760px);
+  max-width: 100%;
+  object-fit: contain; display: block;
+  background: #20262b; border-radius: 16px; padding: 16px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .12), 0 24px 60px rgba(0, 0, 0, .5);
+}
+.lb-cap {
+  color: #e9edf0; text-align: center;
+  font-size: 1.05rem; font-weight: 650; font-variation-settings: "wdth" 104;
+}
+.lb-cap span { display: block; margin-top: 3px; color: #9aa4ac; font-weight: 400; font-size: .9rem; font-variant-numeric: tabular-nums; }
+.lb-btn {
+  position: absolute; display: flex; align-items: center; justify-content: center;
+  width: 46px; height: 46px; padding: 0;
+  color: #e9edf0; background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .18); border-radius: 50%;
+  cursor: pointer; transition: background .18s ease, border-color .18s ease;
+}
+.lb-btn:hover { background: rgba(255, 255, 255, .18); border-color: rgba(255, 255, 255, .4); }
+.lb-close { top: 18px; right: 18px; }
+.lb-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 18px; top: 50%; transform: translateY(-50%); }
+@media (max-width: 639px) {
+  .lb { padding: 14px; }
+  .lb-btn { width: 40px; height: 40px; }
+  .lb-prev { left: 8px; } .lb-next { right: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card, .thumb, .profile-link, .lb-btn, .well img { transition: none; }
+}
+@media print { .thumbs, .lb { display: none !important; } .card:hover { box-shadow: none; } }
+
+/* ================= graphite plate, photo mounted as a framed print =================
+   The photos are ordinary opaque JPEGs on every kind of background — white, dark,
+   a desk, a hand — so the plate cannot pretend to be the photo's own backdrop.
+   Instead the photo is sized to its real edges, rounded and given a hairline, and
+   sits centred on the plate like a print on board. That reads the same whatever
+   the shot behind it looks like. */
+.well {
+  background: var(--plate);
+  display: flex; align-items: center; justify-content: center;
+  padding: var(--pad);
+  border-radius: 18px;
+  cursor: zoom-in;
+}
+.well img {
+  position: static;
+  width: 100%; height: 100%;
+  max-width: 100%; max-height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px var(--plate-edge), 0 8px 22px rgba(0, 0, 0, .34);
+}
+
+.thumb {
+  background: var(--plate);
+  display: flex; align-items: center; justify-content: center;
+  border: 0; border-radius: 12px; padding: 1px;
+  box-shadow: inset 0 0 0 1px transparent;
+}
+.thumb img { width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: cover; border-radius: 11px; }
+.thumb:hover, .thumb.is-active { box-shadow: inset 0 0 0 2px #c08f2e; }
+/* Waiting slots: flat and quiet. Dashes and hatching read as unfinished. */
+.thumb-empty {
+  border: 0; border-radius: 12px;
+  background: color-mix(in srgb, var(--plate) 14%, transparent);
+}
+
+/* ---------------- type hierarchy: name leads, the rest supports ---------------- */
+.card { padding: 12px; border-radius: 20px; }
+.body { padding: 16px 4px 6px; }
+.name {
+  font-size: 1.68rem;
+  margin-bottom: 16px;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  letter-spacing: -.005em;
+}
+.fields { gap: 13px; }
+.fields dt {
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .085em;
+  font-weight: 650;
+  font-variation-settings: "wdth" 88;
+  color: var(--ink-3);
+  margin-bottom: 5px;
+}
+.modder { font-size: 1.08rem; line-height: 1.35; }
+.year { font-size: 1.15rem; font-weight: 700; }
+.year.is-missing { font-size: 1rem; font-weight: 400; }
+.notes li { font-size: 1rem; padding-left: 15px; line-height: 1.45; }
+/* Brass now does one job only — the live thumbnail. */
+.notes li::before { width: 6px; height: 6px; top: .52em; background: var(--ink-3); }
+
+@media (max-width: 639px) {
+  .card { padding: 8px; border-radius: 16px; }
+  .well { border-radius: 14px; }
+  .well img { border-radius: 12px; }
+  .thumb, .thumb-empty { border-radius: 9px; }
+  .thumb { padding: 1px; }
+  .thumb img { border-radius: 8px; }
+  .name { font-size: 1.3rem; font-variation-settings: "wdth" 100; margin-bottom: 12px; }
+  .fields dt { font-size: .66rem; }
+  .modder { font-size: 1rem; }
+  .year { font-size: 1.05rem; }
+  .notes li { font-size: .94rem; }
+}
+
+/* ================= profile links in their own brands =================
+   Each mark is the platform's own glyph in its own colour - YouTube red,
+   the Instagram gradient - on a pill tinted to match. The wordmarks use
+   the brand faces: Roboto, which is YouTube's own UI font, and Plus
+   Jakarta Sans for Instagram, standing in for Instagram Sans - the
+   custom face that replaced the old Billabong script - which is not
+   licensed for the web. Both apply only inside these pills; the rest of
+   the page stays on Archivo. */
+.profile { gap: 12px; }
+.profile-link {
+  gap: 11px;
+  padding: 8px 18px 8px 10px;
+  border-width: 1.5px;
+  background: var(--surface);
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+.brand-mark { flex: 0 0 auto; display: block; }
+.profile-net { font-weight: 700; letter-spacing: 0; }
+.profile-handle { font-size: .92rem; }
+
+/* YouTube: red mark, red wordmark in Roboto, red halo on hover. */
+.is-yt .profile-net {
+  font-family: "Roboto", "Archivo", system-ui, sans-serif;
+  font-size: 1.06rem;
+  color: #D90007;              /* darkened from #FF0000 so it holds up as text */
+  letter-spacing: -.01em;
+}
+:root[data-theme="dark"] .is-yt .profile-net { color: #FF4E45; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .is-yt .profile-net { color: #FF4E45; } }
+.is-yt { border-color: color-mix(in srgb, #FF0000 32%, var(--line)); }
+.is-yt:hover { border-color: #FF0000; box-shadow: 0 4px 14px rgba(255, 0, 0, .22); }
+
+/* Instagram: gradient mark, and the 2026 wordmark as its own lettering.
+   That wordmark is custom-drawn, not a typeface, so no font can stand in
+   for it - this is the vector itself, filled with the brand gradient. */
+.ig-wordmark {
+  display: block;
+  height: 17px;
+  width: auto;
+  flex: 0 0 auto;
+}
+.is-ig { border-color: color-mix(in srgb, #D6249F 32%, var(--line)); }
+.is-ig:hover { border-color: #D6249F; box-shadow: 0 4px 14px rgba(214, 36, 159, .24); }
+
+.profile-link:hover { background: var(--surface); transform: translateY(-1px); }
+.profile-link:hover .profile-handle { color: var(--ink-2); }
+@media (prefers-reduced-motion: reduce) { .profile-link:hover { transform: none; } }
+/* Visitor counter: same pill shape as the profile links, but not a link.
+   The number leads, large and tabular so it reads at a glance. */
+.visits[hidden] { display: none; }
+.visits-pill {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 6px 18px 6px 12px;
+  border: 1.5px solid color-mix(in srgb, var(--brass) 45%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brass) 8%, var(--surface));
+  color: var(--ink);
+  line-height: 1;
+}
+.visits-eye { flex: 0 0 auto; color: var(--brass); }
+.visits-n {
+  font-size: 1.32rem; font-weight: 800;
+  font-variant-numeric: tabular-nums; letter-spacing: -.01em;
+  font-variation-settings: "wdth" 104;
+}
+.visits-label {
+  font-size: .72rem; font-weight: 650; text-transform: uppercase; letter-spacing: .09em;
+  color: var(--ink-3); font-variation-settings: "wdth" 92;
+}
+@media (max-width: 639px) {
+  .profile-link { padding: 7px 14px 7px 9px; gap: 9px; }
+  .is-yt .profile-net { font-size: .98rem; }
+  .ig-wordmark { height: 15px; }
+  .profile-handle { font-size: .84rem; }
+  .visits-pill { padding: 5px 14px 5px 10px; gap: 8px; }
+  .visits-n { font-size: 1.16rem; }
+}
+
+
+/* ================= dotaio-by-dotmod page additions ================= */
+/* Product shots are cut-outs on white or transparent backgrounds, so they sit
+   whole (contain) on a white print instead of being cropped to fill. */
+.well img, .thumb img { object-fit: contain; background: #fff; }
+.well .ph { border-radius: 16px; }
+.back-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin: 0 0 22px; padding: 7px 14px 7px 10px;
+  border: 1.5px solid var(--line); border-radius: 999px;
+  color: var(--ink-2); text-decoration: none; font-size: .92rem; font-weight: 600;
+  font-variation-settings: "wdth" 96; background: var(--surface);
+  transition: border-color .18s ease, color .18s ease;
+}
+.back-link:hover { border-color: var(--brass); color: var(--ink); }
+.swatches { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.swatches li {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px 4px 5px; border: 1px solid var(--line); border-radius: 999px;
+  font-size: .9rem; line-height: 1.2; color: var(--ink-2); background: var(--bg);
+}
+.swatches i { width: 14px; height: 14px; border-radius: 50%; flex: 0 0 auto; box-shadow: inset 0 0 0 1px rgba(0,0,0,.25); }
+.sw-ltd {
+  margin-left: 2px; font-size: .62rem; font-weight: 750; letter-spacing: .07em; text-transform: uppercase;
+  color: var(--brass);
+}
+.foot { padding: 28px 0 60px; border-top: 1px solid var(--line); color: var(--ink-3); font-size: .92rem; }
+.foot a { color: var(--ink-2); }
+@media (max-width: 639px) { .swatches li { font-size: .8rem; } }
+
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <a class="back-link" href="../"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14.5 5-7 7 7 7"/></svg>DOTRBA Masterlist</a>
+    <h1>DOTAIO BY DOTMOD</h1>
+    <p class="by">Compiled by <strong>Asri al-Baker</strong></p>
+    <ul class="profile" aria-label="Profile links">
+      <li><a class="profile-link is-yt" href="https://www.youtube.com/@wak-aio" target="_blank" rel="noopener noreferrer">
+        <svg class="brand-mark" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.54 12 3.54 12 3.54s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81Z" fill="#FF0000"/><path d="M9.55 15.57V8.43L15.82 12l-6.27 3.57Z" fill="#fff"/></svg>
+        <span class="profile-net">YouTube</span><span class="profile-handle">@wak-aio</span></a></li>
+      <li><a class="profile-link is-ig" href="https://www.instagram.com/wak.aio" target="_blank" rel="noopener noreferrer">
+        <svg class="brand-mark" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><defs><radialGradient id="ig-glyph" cx="28%" cy="104%" r="140%"><stop offset="0" stop-color="#FDF497"/><stop offset=".08" stop-color="#FDF497"/><stop offset=".32" stop-color="#FD5949"/><stop offset=".52" stop-color="#D6249F"/><stop offset=".92" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="6.4" fill="url(#ig-glyph)"/><rect x="5.1" y="5.1" width="13.8" height="13.8" rx="4.3" fill="none" stroke="#fff" stroke-width="1.75"/><circle cx="12" cy="12" r="3.35" fill="none" stroke="#fff" stroke-width="1.75"/><circle cx="16.3" cy="7.7" r="1.15" fill="#fff"/></svg>
+        <svg class="ig-wordmark" viewBox="0 0 148.35786 32.804337" role="img" aria-label="Instagram"><defs><linearGradient id="ig-word" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#A22BC4"/><stop offset=".15" stop-color="#E8456B"/><stop offset=".32" stop-color="#F7731E"/><stop offset=".52" stop-color="#ED3F6A"/><stop offset=".74" stop-color="#E0219C"/><stop offset="1" stop-color="#A22BC4"/></linearGradient></defs><g transform="translate(-31.473932,-131.96664)"><path fill="url(#ig-word)" d="m 35.129522,131.96664 -3.65559,0.82734 v 23.26938 h 3.65559 z m 42.220162,1.48673 -0.08992,0.0191 -3.353283,0.73639 v 4.34754 H 70.2912 v 3.18585 h 3.615284 v 10.20093 c 0,1.8283 0.747268,2.85901 1.593701,3.51193 0.815478,0.62904 1.717347,0.92966 3.177584,0.92966 1.48629,0 2.462432,-0.27594 3.068546,-0.55501 0.606115,-0.27907 0.849561,-0.56999 0.849561,-0.56999 l 0.03101,-0.0372 -1.296562,-2.61121 -0.0708,0.0393 c -0.39779,0.22967 -0.9684,0.40278 -1.536857,0.45475 -0.568455,0.052 -1.133376,-0.0181 -1.519287,-0.25166 -0.320514,-0.19394 -0.530465,-0.49019 -0.664559,-0.90434 -0.134093,-0.41415 -0.189136,-0.94557 -0.189136,-1.5937 v -8.61343 h 4.146517 v -3.18585 h -4.146517 z m 86.239176,4.71754 c -1.89685,-0.0191 -3.66843,0.5889 -5.07049,2.44068 v -2.0376 h -3.5357 v 17.46612 h 3.5357 v -9.91671 c 0,-3.08395 1.3323,-4.8209 4.16202,-4.8209 3.52981,0 3.01532,4.59888 3.01532,6.07095 v 8.66511 h 3.59513 v -9.91671 c 0,-1.77362 0.31218,-2.94164 0.94155,-3.68298 1.20209,-1.41593 6.21977,-2.66604 6.21977,3.50573 v 10.09396 h 3.37964 v -11.27425 c 0,-2.11568 -0.52174,-3.73666 -1.56528,-4.86327 -1.04358,-1.1539 -2.05266,-1.73013 -4.08657,-1.73013 -1.12488,-0.008 -2.53667,0.27591 -3.51917,0.82373 -0.98901,0.54902 -1.77213,1.06923 -2.34972,2.22312 -0.30574,-0.98386 -0.62414,-1.50728 -1.4671,-2.09962 -0.85145,-0.63209 -1.93638,-0.94723 -3.2551,-0.94723 z m -72.978486,0.10749 c -4.405166,-3.6e-4 -7.976268,4.06592 -7.976258,9.09299 -1e-5,5.02705 3.571102,9.10723 7.976258,9.10228 0.0749,-8e-5 0.149169,0 0.223759,0 0.0789,0 0.157558,-1.7e-4 0.236678,0 2.022898,0.004 3.978262,-0.78533 5.509741,-2.21123 v 1.77767 h 3.531048 v -14.33039 -3.10214 h -3.531048 v 1.8743 c -1.531269,-1.42646 -3.486653,-2.20542 -5.509741,-2.20348 -0.0403,4e-5 -0.08031,0 -0.120406,0 -0.11334,0 -0.226642,1e-5 -0.340031,0 z m 19.968806,0 c -4.40516,-3.6e-4 -7.97627,4.06592 -7.97626,9.09299 -1e-5,4.67987 2.92038,8.51959 6.90191,9.02632 l -0.003,0.002 c -0.97534,0.49402 -1.73548,1.16637 -2.26653,2.16576 -0.83933,1.57952 -0.4695,3.67523 1.18597,4.98265 1.07203,0.84663 2.7671,1.31481 4.73511,1.20767 1.36002,-0.074 2.51065,-0.39957 3.46026,-0.92242 1.43067,-0.78773 2.40538,-2.02333 2.95589,-3.5233 0.41595,-1.13331 0.50746,-2.28458 0.50746,-3.74034 v -14.85956 -3.10213 h -3.53105 v 1.8743 c -1.53127,-1.42646 -3.48665,-2.20542 -5.50974,-2.20348 -0.0403,4e-5 -0.0803,0 -0.12041,0 -0.11334,0 -0.22664,1e-5 -0.34003,0 z m 31.80323,0 c -4.40517,-3.6e-4 -7.97627,4.06592 -7.97626,9.09299 0,1.51016 0.32417,2.93366 0.89452,4.18785 -0.009,0.0122 -0.0161,0.0245 -0.0253,0.0367 -0.94088,1.24257 -2.67588,1.94086 -4.16202,1.73788 -0.74307,-0.10148 -1.42255,-0.42593 -1.91823,-1.01544 -0.49567,-0.58951 -0.81029,-1.44698 -0.81029,-2.62878 0,-4.7329 4.52737,-7.91011 4.52737,-7.91011 l 0.0548,-0.0372 -1.72496,-3.21117 h -5.40639 -3.72432 v 0.0765 3.18533 h 3.72484 2.51354 c -3.90561,5.26804 -4.09426,9.00009 -2.8515,11.40809 1.25279,2.4275 3.91233,3.50418 5.57433,3.50418 3.63618,0 5.81201,-2.67245 5.84151,-2.70888 1.42803,1.53666 3.35107,2.47975 5.4684,2.47737 0.0749,-8e-5 0.14917,0 0.22376,0 0.0789,0 0.15755,-1.7e-4 0.23667,0 2.0229,0.004 3.97827,-0.78533 5.50975,-2.21123 v 1.77767 h 3.53105 v -14.33039 -3.10214 h -3.53105 v 1.8743 c -1.53127,-1.42646 -3.48666,-2.20542 -5.50975,-2.20348 -0.0403,4e-5 -0.0803,0 -0.1204,0 -0.11334,0 -0.22664,1e-5 -0.34003,0 z m -95.560061,0.0191 c -3.962285,0 -5.00848,2.78691 -5.00848,2.78691 v -2.51199 h -3.564124 v 17.49092 h 3.564124 V 145.526 c 0,0 0.304046,-4.34909 4.154268,-4.34909 3.850221,0 3.893303,4.11934 3.893303,5.32526 v 5.18986 c 0,2.28263 -0.107734,4.67258 3.789949,4.67258 1.471994,0 2.409977,-0.5319 3.150712,-1.21904 1.882866,-1.74662 4.2118,-8.67891 5.522661,-13.03952 0.372158,1.38892 2.039946,2.89335 3.519165,4.64726 0.637339,0.75571 1.450399,1.65722 1.761649,2.45153 0.166391,0.42464 0.233568,0.90179 0.201538,1.3808 -0.100727,1.50656 -1.2111,3.08371 -3.324345,3.07371 -1.473867,-0.007 -2.916493,-0.7703 -3.340364,-1.24798 l -1.418518,2.74763 c 1.819034,1.06331 3.440638,1.31517 4.910811,1.31517 4.262998,0 5.945732,-2.85998 6.43785,-4.99763 0.68909,-2.99325 -2.08871,-5.98646 -4.177523,-8.24756 -2.088814,-2.26109 -2.798279,-4.65656 -2.798279,-4.65656 h -3.677294 c 0,0 -0.716112,1.95079 -1.434021,4.26485 -0.436806,1.40798 -1.867632,5.51382 -3.24528,8.14783 -0.486388,0.92995 -0.783653,1.798 -1.210779,2.17764 -0.26776,0.23799 -0.697585,0.21029 -0.912606,0.11472 -0.393558,-0.17493 -0.331763,-1.38254 -0.331763,-2.65306 v -5.38055 c 0,-4.09151 -2.500369,-6.94635 -6.462654,-6.94635 z m 44.568855,3.00395 a 5.2944026,6.0696349 0 0 1 5.294251,6.06992 5.2944026,6.0696349 0 0 1 -5.294251,6.06939 5.2944026,6.0696349 0 0 1 -5.294767,-6.06939 5.2944026,6.0696349 0 0 1 5.294767,-6.06992 z m 19.968806,0 c 2.92406,1e-4 5.29439,2.71771 5.29425,6.06992 -1.2e-4,3.35199 -2.37038,6.06929 -5.29425,6.06939 -2.92408,2.3e-4 -5.29465,-2.71716 -5.29477,-6.06939 -1.4e-4,-3.35244 2.37051,-6.07015 5.29477,-6.06992 z m 31.80323,0 a 5.2944026,6.0696349 0 0 1 5.29425,6.06992 5.2944026,6.0696349 0 0 1 -5.29425,6.06939 5.2944026,6.0696349 0 0 1 -5.29477,-6.06939 5.2944026,6.0696349 0 0 1 5.29477,-6.06992 z m -26.61388,12.96097 v 1.46244 c 0,0.64973 -0.005,1.30037 -0.0641,1.94148 -0.19768,2.14165 -0.83494,2.91319 -1.68052,3.50987 -0.695,0.49042 -1.70413,0.85342 -3.02669,0.48214 -1.44804,-0.40651 -1.97799,-2.27067 -0.80408,-3.76566 1.1492,-1.46353 3.70432,-2.01146 5.57537,-3.63027 z"/></g></svg><span class="profile-handle">@wak.aio</span></a></li>
+    </ul>
+    <dl class="meta"><div class="meta-item"><dt>First release</dt><dd>June 24, 2019</dd></div><div class="meta-item"><dt>Latest model</dt><dd>dotAIO V3 · November 21, 2025</dd></div><div class="meta-item is-count"><dt>Models and editions, 2019 to 2026</dt><dd>18</dd></div><div class="meta-item is-count"><dt>Generations</dt><dd>4</dd></div><div class="meta-item is-count"><dt>Limited editions</dt><dd>10</dd></div></dl>
+  </div>
+</header>
+
+<nav class="bar" aria-label="Generations and search">
+  <div class="wrap bar-inner">
+    <div class="search">
+      <label for="q" class="sr-only">Search the list</label>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search model, colour or notes" autocomplete="off">
+    </div>
+    <div class="chips"><a class="chip" href="#v1" data-target="v1"><span>dotAIO V1</span><span class="chip-n">5</span></a><a class="chip" href="#v2" data-target="v2"><span>dotAIO V2</span><span class="chip-n">7</span></a><a class="chip" href="#x" data-target="x"><span>dotAIO X</span><span class="chip-n">2</span></a><a class="chip" href="#v3" data-target="v3"><span>dotAIO V3</span><span class="chip-n">4</span></a></div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section class="cat" id="v1" aria-labelledby="v1-h">
+    <header class="cat-head">
+      <h2 id="v1-h">dotAIO V1 <span class="cat-tag">(2019 – 2021)</span></h2>
+      <p class="cat-count" data-total="5">5 items</p>
+    </header>
+    <div class="grid">
+      <article class="card" data-search="dotaio original · standard kit june 24, 2019 black gold red royal blue white gunmetal purple tiffany blue 35w, 4-level auto power 1 × 18650 cnc aluminium, gold-plated accents started the platform; its doors, tanks and rbas fit every later 18650 dotaio" data-key="v1-01">
+        <div class="well">
+          <img src="https://www.vapestore.to/wp-content/uploads/2022/04/dotmod_dotaio_35w_pod_system_-_default.jpg" alt="dotAIO" loading="lazy" decoding="async">
+          <img class="shot-src" src="https://www.vapestore.to/wp-content/uploads/2022/04/dotmod_dotaio_35w_pod_system_-_black.jpg" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://www.vapestore.to/wp-content/uploads/2022/04/dotmod_dotaio_35w_pod_system_-_gold.jpg" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://www.vapestore.to/wp-content/uploads/2022/04/dotmod_dotaio_35w_pod_system_-_red.jpg" alt="" loading="lazy" decoding="async" hidden>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">Original · standard kit</dd></div>
+            <div><dt>Launch date</dt><dd class="year">June 24, 2019</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#1b1b1d"></i>Black</li><li><i style="background:#c9a24a"></i>Gold</li><li><i style="background:#b3262e"></i>Red</li><li><i style="background:#2747a8"></i>Royal Blue</li><li><i style="background:#f2f2f2"></i>White<span class="sw-ltd">Limited</span></li><li><i style="background:#55595f"></i>Gunmetal<span class="sw-ltd">Limited</span></li><li><i style="background:#6a3fa0"></i>Purple<span class="sw-ltd">Limited</span></li><li><i style="background:#7fd1c6"></i>Tiffany Blue<span class="sw-ltd">Limited</span></li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>35W, 4-level auto power</li><li>1 × 18650</li><li>CNC aluminium, gold-plated accents</li><li>Started the platform; its doors, tanks and RBAs fit every later 18650 dotAIO</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="card" data-search="dotaio g10 limited edition · g10 november 13, 2019 orange black green light yellow dark grey royal blue red 35w, 4-level auto power 1 × 18650 g10 composite body first run (orange or black) limited to 100 units worldwide" data-key="v1-02">
+        <div class="well">
+          <img src="https://dotmod.fr/50-large_default/dotaio-v1-g10.jpg" alt="dotAIO G10" loading="lazy" decoding="async">
+          <img class="shot-src" src="https://dotmod.fr/51-large_default/dotaio-v1-g10.jpg" alt="" loading="lazy" decoding="async" hidden>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO G10</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">Limited edition · G10</dd></div>
+            <div><dt>Launch date</dt><dd class="year">November 13, 2019</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#e0782a"></i>Orange<span class="sw-ltd">Limited</span></li><li><i style="background:#1b1b1d"></i>Black<span class="sw-ltd">Limited</span></li><li><i style="background:#3f8f4f"></i>Green<span class="sw-ltd">Limited</span></li><li><i style="background:#efe39a"></i>Light Yellow<span class="sw-ltd">Limited</span></li><li><i style="background:#3b3d42"></i>Dark Grey<span class="sw-ltd">Limited</span></li><li><i style="background:#2747a8"></i>Royal Blue<span class="sw-ltd">Limited</span></li><li><i style="background:#b3262e"></i>Red<span class="sw-ltd">Limited</span></li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>35W, 4-level auto power</li><li>1 × 18650</li><li>G10 composite body</li><li>First run (Orange or Black) limited to 100 units worldwide</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="card" data-search="dotaio se special edition december 13, 2019 black white 35w, 4-level auto power 1 × 18650 zinc alloy and stainless steel backlit oversized fire button doubles as a tri-colour battery led" data-key="v1-03">
+        <div class="well">
+          <img src="https://www.ecigclick.co.uk/wp-content/uploads/2020/06/Dotmod-dotAIO-3quarter-view.jpeg" alt="dotAIO SE" loading="lazy" decoding="async">
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO SE</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">Special Edition</dd></div>
+            <div><dt>Launch date</dt><dd class="year">December 13, 2019</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#1b1b1d"></i>Black</li><li><i style="background:#f2f2f2"></i>White</li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>35W, 4-level auto power</li><li>1 × 18650</li><li>Zinc alloy and stainless steel</li><li>Backlit oversized fire button doubles as a tri-colour battery LED</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="card" data-search="dotaio frost limited release · polycarbonate january 15, 2020 frost smoke red frost purple frost tiffany frost 35w, 4-level auto power 1 × 18650 frosted polycarbonate, about 90 g semi-transparent body shows the internals" data-key="v1-04">
+        <div class="well">
+          <img src="https://dotmod67-com.myshopify.com/cdn/shop/products/frostFront_1024x1024@2x.jpg?v=1597503418" alt="dotAIO Frost" loading="lazy" decoding="async">
+          <img class="shot-src" src="https://www.vapestore.to/wp-content/uploads/2022/04/dotmod_dotaio_-_smoke.png" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://www.vapestore.to/wp-content/uploads/2022/04/dotmod_-_dotaio_-_pod_mod_-_frosted_red.png" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://www.vapestore.to/wp-content/uploads/2022/04/dotmod_dotaio_35w_pod_system_clear_tiffany_blue.png" alt="" loading="lazy" decoding="async" hidden>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO Frost</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">Limited release · polycarbonate</dd></div>
+            <div><dt>Launch date</dt><dd class="year">January 15, 2020</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#e8eef2"></i>Frost<span class="sw-ltd">Limited</span></li><li><i style="background:#4a4d55"></i>Smoke<span class="sw-ltd">Limited</span></li><li><i style="background:#d97a82"></i>Red Frost<span class="sw-ltd">Limited</span></li><li><i style="background:#a68bd0"></i>Purple Frost<span class="sw-ltd">Limited</span></li><li><i style="background:#a6e3da"></i>Tiffany Frost<span class="sw-ltd">Limited</span></li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>35W, 4-level auto power</li><li>1 × 18650</li><li>Frosted polycarbonate, about 90 g</li><li>Semi-transparent body shows the internals</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="card" data-search="dotaio mini compact · 18350 march 19, 2021 black gold red royal blue purple tiffany blue 35w, 4-level auto power 1 × 18350 aluminium, 57 × 45.5 × 21 mm takes all dotaio coils, tanks and rbas" data-key="v1-05">
+        <div class="well">
+          <img src="https://dotmod.com/cdn/shop/products/Gold_1_ddffcd12-cd9c-4e8f-94ef-f6e3a9fe3dec.jpg?v=1761046214" alt="dotAIO mini" loading="lazy" decoding="async">
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/products/Black_1_dd2b45f0-489d-4339-b751-89c0cd260e65.jpg?v=1761046275" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/products/Red_1_561c9868-cb87-4c04-aad8-d516407bee84.jpg?v=1761046268" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/products/RB_1.jpg?v=1761046206" alt="" loading="lazy" decoding="async" hidden>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO mini</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">Compact · 18350</dd></div>
+            <div><dt>Launch date</dt><dd class="year">March 19, 2021</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#1b1b1d"></i>Black</li><li><i style="background:#c9a24a"></i>Gold</li><li><i style="background:#b3262e"></i>Red</li><li><i style="background:#2747a8"></i>Royal Blue</li><li><i style="background:#6a3fa0"></i>Purple<span class="sw-ltd">Limited</span></li><li><i style="background:#7fd1c6"></i>Tiffany Blue<span class="sw-ltd">Limited</span></li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>35W, 4-level auto power</li><li>1 × 18350</li><li>Aluminium, 57 × 45.5 × 21 mm</li><li>Takes all dotAIO coils, tanks and RBAs</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="cat" id="v2" aria-labelledby="v2-h">
+    <header class="cat-head">
+      <h2 id="v2-h">dotAIO V2 <span class="cat-tag">(2021 – 2025)</span></h2>
+      <p class="cat-count" data-total="7">7 items</p>
+    </header>
+    <div class="grid">
+      <article class="card" data-search="dotaio v2 standard kit november 12, 2021 black red royal blue silver tiffany blue purple lime green orange up to 75w in 0.1w steps, tc and bypass 1 × 18650 aluminium, lcd screen with selectable colours dotcoils 0.15–1.0 ω; fits v1 doors, tanks and rbas" data-key="v2-01">
+        <div class="well">
+          <img src="https://dotmod.com/cdn/shop/files/Black_F.png?v=1761046856" alt="dotAIO V2" loading="lazy" decoding="async">
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/products/RoyalBlue_F.png?v=1761046833" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/products/Red_F.png?v=1761046839" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/files/Silver_F.png?v=1761046871" alt="" loading="lazy" decoding="async" hidden>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO V2</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">Standard kit</dd></div>
+            <div><dt>Launch date</dt><dd class="year">November 12, 2021</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#1b1b1d"></i>Black</li><li><i style="background:#b3262e"></i>Red</li><li><i style="background:#2747a8"></i>Royal Blue</li><li><i style="background:#c8cbd0"></i>Silver</li><li><i style="background:#7fd1c6"></i>Tiffany Blue<span class="sw-ltd">Limited</span></li><li><i style="background:#6a3fa0"></i>Purple<span class="sw-ltd">Limited</span></li><li><i style="background:#8fcf3c"></i>Lime Green<span class="sw-ltd">Limited</span></li><li><i style="background:#e0782a"></i>Orange<span class="sw-ltd">Limited</span></li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>Up to 75W in 0.1W steps, TC and bypass</li><li>1 × 18650</li><li>Aluminium, LCD screen with selectable colours</li><li>dotCoils 0.15–1.0 Ω; fits V1 doors, tanks and RBAs</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="card" data-search="dotaio v2 cinnamon limited edition date not published cinnamon up to 75w 1 × 18650 metallic matte cinnamon finish ships with the dotaio v3 tank; extra side airflow slots" data-key="v2-02">
+        <div class="well">
+          <img src="https://dotmod.fr/883-large_default/dotaio-v2-cinnamon.jpg" alt="dotAIO V2 Cinnamon" loading="lazy" decoding="async">
+          <img class="shot-src" src="https://dotmod.fr/882-large_default/dotaio-v2-cinnamon.jpg" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://dotmod.fr/884-large_default/dotaio-v2-cinnamon.jpg" alt="" loading="lazy" decoding="async" hidden>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO V2 Cinnamon</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">Limited edition</dd></div>
+            <div><dt>Launch date</dt><dd class="year">Date not published</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#9c5a34"></i>Cinnamon<span class="sw-ltd">Limited</span></li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>Up to 75W</li><li>1 × 18650</li><li>Metallic matte cinnamon finish</li><li>Ships with the dotAIO V3 tank; extra side airflow slots</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="card" data-search="dotaio v2 lite lightweight · polycarbonate december 16, 2022 clear smoke red green orange purple tiffany blue up to 75w, tc and bypass 1 × 18650 matte polycarbonate same chip and screen as the v2 in a lighter body" data-key="v2-03">
+        <div class="well">
+          <img src="https://cdn11.bigcommerce.com/s-bojz5r7/images/stencil/1280x1280/products/3648/23961/Collage-Square__75340.1671236323.jpg?c=2" alt="dotAIO V2 Lite" loading="lazy" decoding="async">
+          <img class="shot-src" src="https://cdn11.bigcommerce.com/s-bojz5r7/images/stencil/1280x1280/products/3648/23951/Clear1__16679.1671236062.jpg?c=2" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://cdn11.bigcommerce.com/s-bojz5r7/images/stencil/1280x1280/products/3648/23950/Smoke1__96744.1671236068.jpg?c=2" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://cdn11.bigcommerce.com/s-bojz5r7/images/stencil/1280x1280/products/3648/23959/Orange1__77307.1671236088.jpg?c=2" alt="" loading="lazy" decoding="async" hidden>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO V2 Lite</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">Lightweight · polycarbonate</dd></div>
+            <div><dt>Launch date</dt><dd class="year">December 16, 2022</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#e6ecef"></i>Clear</li><li><i style="background:#4a4d55"></i>Smoke</li><li><i style="background:#b3262e"></i>Red</li><li><i style="background:#3f8f4f"></i>Green</li><li><i style="background:#e0782a"></i>Orange</li><li><i style="background:#6a3fa0"></i>Purple</li><li><i style="background:#7fd1c6"></i>Tiffany Blue<span class="sw-ltd">Limited</span></li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>Up to 75W, TC and bypass</li><li>1 × 18650</li><li>Matte polycarbonate</li><li>Same chip and screen as the V2 in a lighter body</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="card" data-search="dotaio v2 sturdy iceberg dotmod × sturdy mfg. co. january 26, 2024 iceberg (white) up to 75w 1 × 18650 white delrin sturdy-designed panels, buttons and drip tip; v3 dotaio tank" data-key="v2-04">
+        <div class="well">
+          <div class="ph">Photo coming soon</div>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO V2 Sturdy Iceberg</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">dotmod × Sturdy Mfg. Co.</dd></div>
+            <div><dt>Launch date</dt><dd class="year">January 26, 2024</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#f4f6f7"></i>Iceberg (white)<span class="sw-ltd">Limited</span></li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>Up to 75W</li><li>1 × 18650</li><li>White Delrin</li><li>Sturdy-designed panels, buttons and drip tip; V3 dotAIO tank</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="card" data-search="dotaio v2 sturdy nero dotmod × sturdy mfg. co. june 14, 2024 nero (black) up to 75w 1 × 18650 all-black patterned delrin bigger rear airflow slot and new slots above the screen" data-key="v2-05">
+        <div class="well">
+          <img src="https://vapehaus.com.my/cdn/shop/files/IMG_2642.jpg?v=1719644303&amp;width=1946" alt="dotAIO V2 Sturdy Nero" loading="lazy" decoding="async">
+          <img class="shot-src" src="https://vapehaus.com.my/cdn/shop/files/DotModxSturdyDotAIONewGallery_webp.jpg?v=1719644303&amp;width=1946" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://vapehaus.com.my/cdn/shop/files/DotModxSturdyDotAIONewScreen_webp.jpg?v=1719644302&amp;width=1946" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://vapehaus.com.my/cdn/shop/files/DotModxSturdyDotAIONewPanel1_webp.jpg?v=1719644302&amp;width=1946" alt="" loading="lazy" decoding="async" hidden>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO V2 Sturdy Nero</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">dotmod × Sturdy Mfg. Co.</dd></div>
+            <div><dt>Launch date</dt><dd class="year">June 14, 2024</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#111111"></i>Nero (black)<span class="sw-ltd">Limited</span></li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>Up to 75W</li><li>1 × 18650</li><li>All-black patterned Delrin</li><li>Bigger rear airflow slot and new slots above the screen</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="card" data-search="dotaio v2 g10 limited edition · g10 date not published orange black purple brown green white up to 75w 1 × 18650 g10 composite sold in small batches" data-key="v2-06">
+        <div class="well">
+          <div class="ph">Photo coming soon</div>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO V2 G10</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">Limited edition · G10</dd></div>
+            <div><dt>Launch date</dt><dd class="year">Date not published</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#e0782a"></i>Orange<span class="sw-ltd">Limited</span></li><li><i style="background:#1b1b1d"></i>Black<span class="sw-ltd">Limited</span></li><li><i style="background:#6a3fa0"></i>Purple<span class="sw-ltd">Limited</span></li><li><i style="background:#6b4a33"></i>Brown<span class="sw-ltd">Limited</span></li><li><i style="background:#3f8f4f"></i>Green<span class="sw-ltd">Limited</span></li><li><i style="background:#f2f2f2"></i>White<span class="sw-ltd">Limited</span></li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>Up to 75W</li><li>1 × 18650</li><li>G10 composite</li><li>Sold in small batches</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="card" data-search="dotaio v2 g10 monarchy limited to 3,000 units january 17, 2025 black royal blue up to 75w 1 × 18650 g10 composite made with monarchy; ships with the dotaio v3 tank" data-key="v2-07">
+        <div class="well">
+          <img src="https://my.dotmod.com/cdn/shop/files/MNCH_F.png?v=1776072214" alt="dotAIO V2 G10 Monarchy" loading="lazy" decoding="async">
+          <img class="shot-src" src="https://my.dotmod.com/cdn/shop/files/MNCH_B.png?v=1776072213" alt="" loading="lazy" decoding="async" hidden>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO V2 G10 Monarchy</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">Limited to 3,000 units</dd></div>
+            <div><dt>Launch date</dt><dd class="year">January 17, 2025</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#1b1b1d"></i>Black<span class="sw-ltd">Limited</span></li><li><i style="background:#2747a8"></i>Royal Blue<span class="sw-ltd">Limited</span></li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>Up to 75W</li><li>1 × 18650</li><li>G10 composite</li><li>Made with Monarchy; ships with the dotAIO V3 tank</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="cat" id="x" aria-labelledby="x-h">
+    <header class="cat-head">
+      <h2 id="x-h">dotAIO X <span class="cat-tag">(2024)</span></h2>
+      <p class="cat-count" data-total="2">2 items</p>
+    </header>
+    <div class="grid">
+      <article class="card" data-search="dotaio x essential essential kit april 19, 2024 black gunmetal 5–60w 1 × 18650 in a separate magnetic module aluminium, modular dotaio tank module, v3 dotaio tank, 0.3 ω and 0.7 ω dotcoils" data-key="x-01">
+        <div class="well">
+          <img src="https://dotmod.com/cdn/shop/files/01_c71fd5ef-1935-47fa-8829-0939ebd2f3a2.png?v=1761049386" alt="dotAIO X Essential" loading="lazy" decoding="async">
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/files/02_b630b13a-d150-4d0a-8838-989d09ed3b62.png?v=1761049404" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/files/03_b6a8fac2-d37d-4ac0-9e77-e1b4631d7a89.png?v=1761049414" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/files/es.png?v=1761049290" alt="" loading="lazy" decoding="async" hidden>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO X Essential</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">Essential kit</dd></div>
+            <div><dt>Launch date</dt><dd class="year">April 19, 2024</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#1b1b1d"></i>Black</li><li><i style="background:#55595f"></i>Gunmetal</li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>5–60W</li><li>1 × 18650 in a separate magnetic module</li><li>Aluminium, modular</li><li>dotAIO Tank Module, V3 dotAIO tank, 0.3 Ω and 0.7 Ω dotCoils</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="card" data-search="dotaio x pro pro kit · adds boro tank module april 19, 2024 black gunmetal 5–60w 1 × 18650 in a separate magnetic module aluminium, modular takes boro tanks and bridges as well as dotaio tanks and rbas" data-key="x-02">
+        <div class="well">
+          <img src="https://dotmod.com/cdn/shop/files/04_b6c04320-d47d-4c3f-8d0f-abc5a3ddb956.png?v=1761049408" alt="dotAIO X Pro" loading="lazy" decoding="async">
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/files/05_c34ed412-960c-4055-b802-0cd4a22a7f0b.png?v=1761049371" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/files/DSC5924.jpg?v=1761049285" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/files/06_c5301f78-7911-47dc-953b-b3c12f563422.png?v=1761049375" alt="" loading="lazy" decoding="async" hidden>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO X Pro</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">Pro kit · adds Boro Tank Module</dd></div>
+            <div><dt>Launch date</dt><dd class="year">April 19, 2024</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#1b1b1d"></i>Black</li><li><i style="background:#55595f"></i>Gunmetal</li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>5–60W</li><li>1 × 18650 in a separate magnetic module</li><li>Aluminium, modular</li><li>Takes boro tanks and bridges as well as dotAIO tanks and RBAs</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="cat" id="v3" aria-labelledby="v3-h">
+    <header class="cat-head">
+      <h2 id="v3-h">dotAIO V3 <span class="cat-tag">(2025 – 2026)</span></h2>
+      <p class="cat-count" data-total="4">4 items</p>
+    </header>
+    <div class="grid">
+      <article class="card" data-search="dotaio v3 standard kit november 21, 2025 black silver gunmetal red royal blue 5–80w in 0.1w steps 1 × 18650 aluminium, 88.7 × 45.8 × 23.6 mm, 105 g 0.96″ full-colour screen with gif upload; dotaio v4 tank and pod included" data-key="v3-01">
+        <div class="well">
+          <img src="https://dotmod.com/cdn/shop/files/bk_f_8f630f46-3d65-410c-bc96-4e4168b059c7.jpg?v=1770999879" alt="dotAIO V3" loading="lazy" decoding="async">
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/files/sl_f_ddb64403-be64-4ae4-b04d-9ba19cdc33f3.jpg?v=1770999879" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/files/gm_f_34f596f8-319b-462c-8320-ae99852c95d6.jpg?v=1770999879" alt="" loading="lazy" decoding="async" hidden>
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/files/rb_f_ffd97ddf-1970-4e01-9af7-f91c95964f74.jpg?v=1770999879" alt="" loading="lazy" decoding="async" hidden>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO V3</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">Standard kit</dd></div>
+            <div><dt>Launch date</dt><dd class="year">November 21, 2025</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#1b1b1d"></i>Black</li><li><i style="background:#c8cbd0"></i>Silver</li><li><i style="background:#55595f"></i>Gunmetal</li><li><i style="background:#b3262e"></i>Red</li><li><i style="background:#2747a8"></i>Royal Blue</li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>5–80W in 0.1W steps</li><li>1 × 18650</li><li>Aluminium, 88.7 × 45.8 × 23.6 mm, 105 g</li><li>0.96″ full-colour screen with GIF upload; dotAIO V4 tank and pod included</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="card" data-search="dotaio v3 orange limited release colour 2026 orange 5–80w 1 × 18650 aluminium spring 2026 limited colour" data-key="v3-02">
+        <div class="well">
+          <img src="https://dotmod.com/cdn/shop/files/OG_F_4803e19c-bd68-4a62-8786-353a9de8b2ae.png?v=1770999879" alt="dotAIO V3 Orange" loading="lazy" decoding="async">
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/files/OG_B_9868a70f-5ae4-4c30-b2ad-3a0c7afa1375.png?v=1770999879" alt="" loading="lazy" decoding="async" hidden>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO V3 Orange</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">Limited release colour</dd></div>
+            <div><dt>Launch date</dt><dd class="year">2026</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#e0782a"></i>Orange<span class="sw-ltd">Limited</span></li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>5–80W</li><li>1 × 18650</li><li>Aluminium</li><li>Spring 2026 limited colour</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="card" data-search="dotaio v3 sea foam blue limited release colour 2026 sea foam blue 5–80w 1 × 18650 aluminium 2026 limited colour" data-key="v3-03">
+        <div class="well">
+          <img src="https://dotmod.com/cdn/shop/files/SFB_F_6871d57e-81c2-40ac-96b6-beee2d0d5241.jpg?v=1774461645" alt="dotAIO V3 Sea Foam Blue" loading="lazy" decoding="async">
+          <img class="shot-src" src="https://dotmod.com/cdn/shop/files/SFB_B_5fe866d6-f5fb-4f54-bb44-c5703dfdf772.jpg?v=1774461645" alt="" loading="lazy" decoding="async" hidden>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO V3 Sea Foam Blue</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">Limited release colour</dd></div>
+            <div><dt>Launch date</dt><dd class="year">2026</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#8fd3c7"></i>Sea Foam Blue<span class="sw-ltd">Limited</span></li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>5–80W</li><li>1 × 18650</li><li>Aluminium</li><li>2026 limited colour</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="card" data-search="dotaio v3 forged carbon limited edition 2026 forged carbon 5–80w 1 × 18650 forged carbon fibre finish listed by authorised retailers in 2026" data-key="v3-04">
+        <div class="well">
+          <div class="ph">Photo coming soon</div>
+        </div>
+        <div class="body">
+          <h3 class="name">dotAIO V3 Forged Carbon</h3>
+          <dl class="fields">
+            <div><dt>Version</dt><dd class="modder">Limited edition</dd></div>
+            <div><dt>Launch date</dt><dd class="year">2026</dd></div>
+            <div><dt>Colours</dt><dd><ul class="swatches"><li><i style="background:#2b2b2b"></i>Forged carbon<span class="sw-ltd">Limited</span></li></ul></dd></div>
+            <div><dt>Notes</dt><dd><ul class="notes"><li>5–80W</li><li>1 × 18650</li><li>Forged carbon fibre finish</li><li>Listed by authorised retailers in 2026</li></ul></dd></div>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </section>
+  <div class="empty" id="empty" hidden>
+    <p id="empty-msg"></p>
+    <button type="button" id="clear">Clear search</button>
+  </div>
+</main>
+
+<footer class="wrap foot">
+  <p>Launch dates are from dotmod's official <a href="https://dotmod.com/blogs/news/dotaio-timeline-and-evolution" target="_blank" rel="noopener noreferrer">dotAIO timeline</a>. Limited colours came out after their base model; dotmod didn't publish their exact dates. Photos load from dotmod.com and authorised retailers.</p>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-btn lb-close" type="button" id="lb-close" aria-label="Close photo viewer">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <button class="lb-btn lb-prev" type="button" id="lb-prev" aria-label="Previous photo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14.5 5-7 7 7 7"/></svg>
+  </button>
+  <button class="lb-btn lb-next" type="button" id="lb-next" aria-label="Next photo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 5 7 7-7 7"/></svg>
+  </button>
+  <figure class="lb-fig">
+    <img id="lb-img" src="" alt="">
+    <figcaption class="lb-cap" id="lb-cap"></figcaption>
+  </figure>
+</div>
+<script src="dotaio.js"></script>
+</body>
+</html>
