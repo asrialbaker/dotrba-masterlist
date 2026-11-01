@@ -271,6 +271,24 @@ main { padding-bottom: 80px; }
   object-position: center;
   display: block;
 }
+/* "Coming soon" corner ribbon on the photo of an RBA that is announced but not out yet. */
+.well { container-type: inline-size; }
+.ribbon-wrap {
+  position: absolute; inset: 0;
+  overflow: hidden; border-radius: inherit;
+  pointer-events: none; z-index: 2;
+}
+.ribbon {
+  position: absolute; top: 17.5%; right: -24.5%; width: 100%;
+  transform: rotate(45deg);
+  background: linear-gradient(180deg, #ff3b3b, #c40000);
+  border-top: .6cqw solid #ffd54a; border-bottom: .6cqw solid #ffd54a;
+  box-shadow: 0 1cqw 2.4cqw rgba(0, 0, 0, .45);
+  color: #fff; text-align: center; white-space: nowrap;
+  font-family: "Arial Black", Arial, sans-serif; font-weight: 900;
+  font-size: 5.8cqw; line-height: 13cqw; letter-spacing: .6cqw;
+  text-shadow: 0 .4cqw 0 rgba(0, 0, 0, .35);
+}
 /* Empty photo slot: same box and inner area as a photo, so a photo dropped in later fits the same way. */
 .ph {
   position: absolute;
@@ -596,6 +614,160 @@ a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid 
   .visits-n { font-size: 1.16rem; }
 }
 
+/* Header pills: YouTube, Instagram and the visitor counter share one height,
+   and on phones, where they stack, one width, so their edges line up. */
+.profile-link, .visits-pill { box-sizing: border-box; height: 44px; padding-top: 0; padding-bottom: 0; }
+.visits-pill { gap: 9px; padding-left: 12px; padding-right: 18px; }
+@media (max-width: 639px) {
+  .profile { display: grid; grid-template-columns: max-content; gap: 10px; }
+  .profile > li > .profile-link, .profile > li > .visits-pill { width: 100%; height: 42px; }
+  .visits-pill { padding-left: 11px; }
+}
+
+/* ================= collection doors: three ways into the masterlist =================
+   Each door is a full-bleed photo with the text laid over a dark fade at the
+   bottom: a small mono kicker, the title, and a mono meta line. To add a photo,
+   replace the .door-ph block with <img src="images/…" alt=""> — it fills the
+   card. Class names stay apart from .card / .well so the search filter and
+   the gallery script leave these alone. */
+.doors { margin: 34px 0 0; }
+.doors-head { margin: 0 0 14px; }
+.doors-title {
+  margin: 0;
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .76rem; font-weight: 500; text-transform: uppercase; letter-spacing: .16em;
+  color: var(--ink-3);
+}
+.doors-grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px;
+}
+@media (min-width: 720px) { .doors-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; } }
+@media (min-width: 980px) { .doors-grid { gap: 22px; } }
+.doors-grid > li { display: flex; min-width: 0; }
+
+.door {
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --kicker: #e0962f;
+  position: relative; isolation: isolate;
+  flex: 1 1 auto; min-width: 0;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--plate);
+  border: 1px solid color-mix(in srgb, var(--brass) 28%, var(--line));
+  color: #fff; text-decoration: none;
+  box-shadow: 0 1px 2px rgba(16, 24, 32, .06);
+  transition: box-shadow .25s ease, transform .25s ease, border-color .25s ease;
+}
+@media (min-width: 720px) { .door { aspect-ratio: 4 / 5; } }
+a.door:hover { transform: translateY(-2px); border-color: var(--brass); box-shadow: 0 14px 34px rgba(16, 24, 32, .2); }
+a.door:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+/* Photo, or the placeholder, fills the whole card. */
+.door-photo { position: absolute; inset: 0; z-index: -1; }
+.door-photo img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 6%; display: block;
+  transition: transform .6s cubic-bezier(.2, .7, .2, 1);
+}
+a.door:hover .door-photo img { transform: scale(1.04); }
+.door-ph {
+  position: absolute; inset: 0;
+  display: flex; align-items: flex-start; justify-content: center; padding-top: 22%;
+  color: rgba(255, 255, 255, .28);
+  background:
+    radial-gradient(110% 80% at 50% 0%, rgba(255, 255, 255, .1), transparent 62%),
+    radial-gradient(rgba(255, 255, 255, .07) 1px, transparent 1.2px) 0 0 / 14px 14px,
+    var(--plate);
+}
+@media (min-width: 720px) { .door-ph { padding-top: 30%; } }
+.door-ph svg { display: block; }
+/* Dark fade so the text holds on any photo. */
+.door::after {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: linear-gradient(180deg,
+    rgba(10, 14, 18, 0) 34%,
+    rgba(10, 14, 18, .55) 62%,
+    rgba(10, 14, 18, .9) 100%);
+}
+
+/* Top row: round action button on the left, mono pill on the right. */
+.door-btn, .door-pill { position: absolute; top: 14px; z-index: 1; }
+.door-btn {
+  left: 14px;
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(20, 28, 34, .55);
+  border: 1px solid rgba(255, 255, 255, .18);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  color: #fff;
+  transition: background .25s ease;
+}
+a.door:hover .door-btn { background: rgba(20, 28, 34, .8); }
+.door-pill {
+  right: 14px;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: rgba(14, 20, 25, .72);
+  border: 1px solid rgba(255, 255, 255, .16);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  font-family: var(--mono); font-size: .7rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .1em; color: #fff;
+  white-space: nowrap;
+}
+
+/* Bottom: kicker, title, meta. */
+.door-body {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 1;
+  padding: 0 22px 20px;
+}
+.door-kicker {
+  margin: 0 0 8px;
+  font-family: var(--mono); font-size: .76rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: .2em;
+  color: var(--kicker);
+}
+.door-name {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.3vw, 1.75rem);
+  line-height: 1.12;
+  font-weight: 800;
+  font-variation-settings: "wdth" 100;
+  letter-spacing: -.012em;
+  color: #fff;
+  text-wrap: balance;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, .35);
+}
+.door-meta {
+  margin: 10px 0 0;
+  font-family: var(--mono); font-size: .8rem; font-weight: 400;
+  color: rgba(255, 255, 255, .62);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Not open yet: muted kicker, no hover lift. */
+.door.is-soon { border-style: dashed; border-color: var(--ink-3); }
+.door.is-soon .door-kicker { color: #a9b3bb; }
+
+@media (max-width: 719px) {
+  .doors { margin-top: 26px; }
+  .door { border-radius: 14px; }
+  .door-btn { width: 40px; height: 40px; top: 12px; left: 12px; }
+  .door-pill { top: 12px; right: 12px; padding: 6px 11px; font-size: .64rem; }
+  .door-body { padding: 0 18px 16px; }
+  .door-kicker { font-size: .7rem; margin-bottom: 6px; }
+  .door-name { font-size: 1.42rem; }
+  .door-meta { font-size: .74rem; margin-top: 7px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .door, .door-photo img, .door-btn { transition: none; }
+  a.door:hover, a.door:hover .door-photo img { transform: none; }
+}
+@media print { .doors { display: none; } }
+
 
 /* ================= dotaio-by-dotmod page additions ================= */
 /* Product shots are cut-outs on white or transparent backgrounds, so they sit
@@ -711,7 +883,8 @@ a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid 
       </article>
       <article class="card" data-search="dotaio se special edition december 13, 2019 black white 35w, 4-level auto power 1 × 18650 zinc alloy and stainless steel backlit oversized fire button doubles as a tri-colour battery led" data-key="v1-03">
         <div class="well">
-          <img src="https://www.ecigclick.co.uk/wp-content/uploads/2020/06/Dotmod-dotAIO-3quarter-view.jpeg" alt="dotAIO SE" loading="lazy" decoding="async">
+          <img src="../images/dotaio-se-1.jpg" alt="dotAIO SE" loading="lazy" decoding="async">
+          <img class="shot-src" src="https://www.ecigclick.co.uk/wp-content/uploads/2020/06/Dotmod-dotAIO-3quarter-view.jpeg" alt="" loading="lazy" decoding="async" hidden>
         </div>
         <div class="body">
           <h3 class="name">dotAIO SE</h3>
