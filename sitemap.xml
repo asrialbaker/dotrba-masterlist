@@ -21,4 +21,11 @@
       <image:loc>https://asrialbaker.github.io/dotrba-masterlist/images/dotaio-v2-g10-1.jpg</image:loc>
     </image:image>
   </url>
+  <url>
+    <loc>https://asrialbaker.github.io/dotrba-masterlist/devices-by-others/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <image:image>
+      <image:loc>https://asrialbaker.github.io/dotrba-masterlist/images/door-others.jpg</image:loc>
+    </image:image>
+  </url>
 </urlset>
