@@ -271,6 +271,24 @@ main { padding-bottom: 80px; }
   object-position: center;
   display: block;
 }
+/* "Coming soon" corner ribbon on the photo of an RBA that is announced but not out yet. */
+.well { container-type: inline-size; }
+.ribbon-wrap {
+  position: absolute; inset: 0;
+  overflow: hidden; border-radius: inherit;
+  pointer-events: none; z-index: 2;
+}
+.ribbon {
+  position: absolute; top: 17.5%; right: -24.5%; width: 100%;
+  transform: rotate(45deg);
+  background: linear-gradient(180deg, #ff3b3b, #c40000);
+  border-top: .6cqw solid #ffd54a; border-bottom: .6cqw solid #ffd54a;
+  box-shadow: 0 1cqw 2.4cqw rgba(0, 0, 0, .45);
+  color: #fff; text-align: center; white-space: nowrap;
+  font-family: "Arial Black", Arial, sans-serif; font-weight: 900;
+  font-size: 5.8cqw; line-height: 13cqw; letter-spacing: .6cqw;
+  text-shadow: 0 .4cqw 0 rgba(0, 0, 0, .35);
+}
 /* Empty photo slot: same box and inner area as a photo, so a photo dropped in later fits the same way. */
 .ph {
   position: absolute;
@@ -1331,6 +1349,7 @@ a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid 
       <article class="card" data-search="i3 rba royal customs (malaysia) x veepon (china) 2026 dot and boro." data-key="c3-15">
         <div class="well">
           <img src="images/c3-15-1.jpg" alt="i3 RBA" loading="lazy" decoding="async">
+          <span class="ribbon-wrap"><span class="ribbon">COMING SOON</span></span>
         </div>
         <div class="body">
           <h3 class="name">i3 RBA</h3>
@@ -1344,6 +1363,7 @@ a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid 
       <article class="card" data-search="gallus rba dotaio kit kaser mods &amp; animodz, france 2026 boro &amp; dot" data-key="c3-16">
         <div class="well">
           <img src="images/c3-16-1.jpg" alt="Gallus RBA dotaio kit" loading="lazy" decoding="async">
+          <span class="ribbon-wrap"><span class="ribbon">COMING SOON</span></span>
         </div>
         <div class="body">
           <h3 class="name">Gallus RBA dotaio kit</h3>
