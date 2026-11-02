@@ -55,7 +55,8 @@
   }
 })();
 
-/* ---- card galleries: one big photo, three thumbs, hover to swap, click to zoom ---- */
+/* ---- card galleries: one big photo, thumbs below, hover to swap, click to zoom ----
+   Three thumbs per card by default. A section with data-thumbs="6" gets two rows of three. */
 (function () {
   var lb = document.getElementById('lb');
   var lbImg = document.getElementById('lb-img');
@@ -112,8 +113,8 @@
     });
   }
 
-  function emptyRow(ul) {
-    for (var i = 0; i < 3; i++) {
+  function emptyRow(ul, slots) {
+    for (var i = 0; i < slots; i++) {
       var li = document.createElement('li');
       var slot = document.createElement('span');
       slot.className = 'thumb-empty';
@@ -131,18 +132,20 @@
   }
 
   function build(card, well, hero, name, list) {
+    var box = card.closest('[data-thumbs]');
+    var slots = box ? Math.max(3, parseInt(box.getAttribute('data-thumbs'), 10) || 3) : 3;
     var ul = document.createElement('ul');
     ul.className = 'thumbs';
     ul.setAttribute('aria-label', name + ' photos');
     well.insertAdjacentElement('afterend', ul);
 
-    if (!list.length) { placeholder(well); emptyRow(ul); return; }
+    if (!list.length) { placeholder(well); emptyRow(ul, slots); return; }
     if (hero.getAttribute('src') !== list[0]) hero.src = list[0];
 
-    /* Photo 1 holds the big slot; the thumb row is the other three shots. */
+    /* Photo 1 holds the big slot; the thumbs are the other shots. */
     var rest = list.slice(1);
     var buttons = [];
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < slots; i++) {
       var li = document.createElement('li');
       if (i < rest.length) {
         var b = document.createElement('button');
