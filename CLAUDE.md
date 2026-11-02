@@ -52,6 +52,10 @@ models count is filled in from the cards. When a count changes, update it on eve
 - Store photos in `images/`, not as links to other sites (those break or get blocked).
 - 900 × 900 px square JPEG, quality about 88–90, cropped close to the device.
 - A card shows one big photo (photo 1, the "hero") and three thumbnails (photos 2–4).
+- Exception: cards in the **AIO dot platform** section of `devices-by-others/index.html` have
+  six thumbnails in two rows (photos 2–7). That section has `data-thumbs="6"`; the shared
+  gallery script `dotaio-by-dotmod/dotaio.js` reads it (default 3). Add photos 5–7 as more
+  `<img class="shot-src" … hidden>` lines in the card's `.well`; empty slots show as grey boxes.
 - Name them by card, for example `dotaio-se-1.jpg` … `dotaio-se-4.jpg`.
 
 ## Publishing
